@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rb-blue
+spec:
+  selector:
+    matchLabels:
+      app: rb-blue
+  replicas: 1 
+  template:
+    metadata:
+      labels:
+        app: rb-blue
+    spec:
+      containers:
+      - name: blue
+        image: 245095557466.dkr.ecr.us-east-2.amazonaws.com/blue:latest
+        ports:
+        - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bluesrv
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: rb-blue
