@@ -5,7 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: 245095557466.dkr.ecr.us-east-2.amazonaws.com/lbe
+  tag: "34.2"
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
