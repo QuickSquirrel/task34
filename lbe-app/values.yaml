@@ -2,7 +2,7 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-replicaCount: 2
+replicaCount: 4
 
 image:
   repository: 245095557466.dkr.ecr.us-east-2.amazonaws.com/lbe
